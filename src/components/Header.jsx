@@ -37,7 +37,7 @@ const Header = () => {
         const selectedOption = thirdOptions[randomIndex];
 
         // Create the full description
-        const fullDescription = `Software Developer, Writer, and ${selectedOption}`;
+        const fullDescription = `Software Manager, Writer, and ${selectedOption}`;
         setTypedDescription(fullDescription);
     }, []);
 
@@ -50,12 +50,12 @@ const Header = () => {
         >
             <header>
                 <h1>
-                    <TypeOut inputString="Zakariah's Portfolio" time="300" typeSpeed={100} />
+                    <TypeOut inputString="Aria's Portfolio" time="300" typeSpeed={100} />
                 </h1>
                 {/* Profile Image */}
                 <div className="profile-section">
                     <div className='image-container'>
-                        <img className='glow' src={profileImage} alt="Zakariah's profile" />
+                        <img className='glow' src={profileImage} alt="Aria's profile" />
                     </div>
 
                     {/* Typed Message with Random Third Option */}

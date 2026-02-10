@@ -1,10 +1,10 @@
-# ZAKARIAH J HALLOW - RESUME SUMMARY
+# ARIA J HALLOW - RESUME SUMMARY
 
 ## CONTACT INFORMATION
-- **Name:** Zakariah J Hallow
-- **Email:** zakariahjhallow@outlook.com
+- **Name:** Aria J Hallow
+- **Email:** becomingaria@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/zakariah-om
-- **GitHub:** https://github.com/Rancor38
+- **GitHub:** https://github.com/becomingaria
 
 ## PROFESSIONAL SUMMARY
 Software Developer with extensive experience in AWS cloud architecture, full-stack development, and IoT solutions. Specializes in enterprise-level infrastructure as code (IaC) development using AWS CDK and serverless architecture. Demonstrated expertise in building and maintaining CI/CD pipelines, monitoring systems, and web applications with a focus on scalability and reliability.
@@ -116,17 +116,11 @@ Software Developer with extensive experience in AWS cloud architecture, full-sta
 - Created enterprise solutions that monitor facility infrastructure, improve operational efficiency, and enable proactive maintenance across the global building network
 - Technologies: AWS, IoT, Data Engineering, CDK
 
-**Hardware Installation App**
-- Developed a mobile-optimized web application deployed on AWS for field technicians
-- Implemented features for documenting and tracking hardware installations with photo evidence
-- Built with offline support, image processing, and robust cloud storage using AWS serverless architecture
-- Technologies: Web, Full-Stack, Backend, Mobile, AWS
-
-**Device Health App**
-- Created a web application deployed on AWS for monitoring and managing IoT devices
-- Implemented real-time health status tracking for LoRaWAN sensors and gateways
-- Built with React, Python Lambda, and AWS CDK
-- Technologies: Web, Full-Stack, Backend, AWS, IoT
+**Atria - The Hardware App**
+- An extensible application used at all levels of the Milvian Hardware Team's install, monitoring, and provisioning processes
+- Singular platform for hardware installers, device provisioners, site surveyors, and site administrators
+- Monitor hardware status and perform provisioning, installations, and remediation
+- Technologies: Web, Full-Stack, Backend, AWS, IoT, Hardware
 
 **Wirefree Gateway Health Dashboard**
 - Developed AWS CDK solution that monitors LoRaWAN gateway connectivity for Amazon's Corp connected OpsTech support facilities
@@ -143,15 +137,15 @@ Software Developer with extensive experience in AWS cloud architecture, full-sta
 ### Professional Web Applications
 
 **Aqueduct**
-- A complex web-based tool for data flow management and visualization
-- Technologies: Web, Frontend, Full-Stack
+- Milvian Group's flagship IoT platform for water intelligence, energy management, and indoor air quality monitoring
+- Provides asset intelligence, unified dashboards, and automated alerts
+- Hardware-agnostic with 20+ sensor partners supporting LoRaWAN, BACnet, and Modbus protocols
+- Technologies: Web, Frontend, Full-Stack, IoT, Enterprise
 
 ### Notable Projects
 
-**EZ-Notes** - An application for saving rich text notes online
 **Monster Finder** - An application for finding monsters to use in Dungeons & Dragons 5th Edition
 **Borgbot** - A multi-functional Discord bot with extensive capabilities
-**DM's Guild Titles** - A series of published booklets on DM's Guild
 **Textmagotchi** - A Tamagotchi-like browser game
 **RPG-Dice-React** - An application for rolling polyhedral dice for tabletop roleplaying games
 **Simple-To-Do** - A lightweight, fast to-do application

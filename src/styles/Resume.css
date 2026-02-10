@@ -4,8 +4,18 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
     color: var(--text-color);
     background-color: var(--background-color);
     line-height: 1.5;
@@ -17,6 +27,12 @@
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 2px solid var(--accent-color);
+}
+
+.resume-header-branding {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
 }
 
 .resume-header h1 {
@@ -116,27 +132,26 @@
 }
 
 .download-resume-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: linear-gradient(135deg, var(--accent-color), #4a00e0);
-    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: var(--gradient-nav);
+    color: rgb(255, 255, 255);
     border: none;
-    border-radius: 30px;
+    border-radius: 12px;
     font-weight: 600;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(138, 43, 226, 0.3);
-    font-size: 0.95rem;
+    transition: transform 0.3s ease;
+    font-size: 1.1rem;
 }
 
 .download-resume-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(138, 43, 226, 0.4);
 }
 
 .download-resume-btn:active {
     transform: translateY(0);
-    box-shadow: 0 2px 5px rgba(138, 43, 226, 0.4);
 }
 
 .download-indicator {
@@ -155,7 +170,9 @@
     font-weight: 500;
     font-size: 0.95rem;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
     box-shadow: 0 3px 8px rgba(74, 0, 224, 0.3);
 }
 
@@ -386,7 +403,9 @@ h3::after {
     font-weight: 500;
     font-size: 0.95rem;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
     box-shadow: 0 3px 8px rgba(39, 174, 96, 0.3);
 }
 
@@ -869,5 +888,19 @@ h3::after {
 
     .resume-job h4 {
         font-size: 1.1rem;
+    }
+
+    .resume-header-branding {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .resume-header-branding .resume-header {
+        text-align: center;
+    }
+
+    .resume-header-branding > div:first-child {
+        margin-right: 0 !important;
+        margin-bottom: 0.5em;
     }
 }

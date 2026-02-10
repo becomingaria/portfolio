@@ -3,14 +3,38 @@
 
 export const featuredProjects = [
     {
-        title: "Atria",
+        title: "Aqueduct",
         description:
-            "Proposed and spearheaded development of Milvian Group's extensible hardware platform for install, monitoring, and provisioning LoRaWAN devices, both an internal and customer-facing solution for Amazon",
+            "Milvian Group's flagship IoT platform providing water intelligence, energy management, indoor air quality monitoring, asset intelligence, unified dashboards, and automated alerts. Hardware-agnostic with 20+ sensor partners supporting LoRaWAN, BACnet, and Modbus protocols.",
         highlights: [
-            "Unified platform for hardware installers, device provisioners, and site administrators",
+            "Water intelligence with hardware-agnostic approach and 20+ vetted sensor partners",
+            "Energy management with circuit-level electricity monitoring and demand analysis",
+            "Indoor air quality monitoring with CO2, VOC, PM2.5 tracking",
+            "Asset intelligence with equipment runtime tracking and predictive maintenance",
+            "Unified dashboards with role-based views and mobile access",
+            "Configurable alerts with multi-channel notifications and automated responses",
+        ],
+        categories: [
+            "web",
+            "full-stack",
+            "frontend",
+            "enterprise",
+            "architecture",
+            "iot",
+            "cicd",
+        ],
+        repoUrl: "https://github.com/private-repo",
+        liveUrl: "https://milviangroup.com/aqueduct-platform",
+    },
+    {
+        title: "Atria - The Hardware App",
+        description:
+            "Extensible application used at all levels of the Milvian Hardware Team's install, monitoring, and provisioning processes for Aqueduct and the LoRaWAN Platform",
+        highlights: [
+            "Singular platform for hardware installers, device provisioners, site surveyors, and site administrators",
+            "Monitor hardware status and perform provisioning and installations",
+            "Access notifications about hardware assets for remediation",
             "Migrated and expanded Install App and Device Health App functionality",
-            "Integrated site survey solutions and device dashboards",
-            "Designed comprehensive device provisioning system",
         ],
         categories: [
             "web",
@@ -20,28 +44,11 @@ export const featuredProjects = [
             "hardware",
             "iot",
             "platform",
+            "cicd",
+            "mobile",
         ],
         repoUrl: "https://github.com/private-repo",
         liveUrl: "https://www.atria.milvian-amzl.com/",
-    },
-    {
-        title: "Aqueduct",
-        description:
-            "Architected and led development of Milvian Group's flagship web application for complex data flow management and visualization",
-        highlights: [
-            "Designed system architecture and data models",
-            "Led cross-functional development team",
-            "Implemented advanced data visualization features",
-        ],
-        categories: [
-            "web",
-            "full-stack",
-            "frontend",
-            "enterprise",
-            "architecture",
-        ],
-        repoUrl: "https://github.com/private-repo",
-        liveUrl: "https://milvian.group/aqueduct/",
     },
     {
         title: "LoRaWAN Platform CI/CD Pipeline",
@@ -59,6 +66,7 @@ export const featuredProjects = [
             "enterprise",
             "cicd",
             "cloud",
+            "database",
         ],
         repoUrl: "https://github.com/private-repo",
         liveUrl: "https://www.amazon.com/b2b",
@@ -80,27 +88,8 @@ export const featuredProjects = [
             "data",
             "cdk",
             "enterprise",
-        ],
-        repoUrl: "https://github.com/private-repo",
-        liveUrl: "https://www.amazon.com/b2b",
-    },
-    {
-        title: "Hardware Installation App",
-        description:
-            "A mobile-optimized web application deployed on AWS for field technicians",
-        highlights: [
-            "Created app for documenting hardware installations with photo evidence",
-            "Implemented offline support and robust cloud storage",
-            "Built with AWS serverless architecture",
-        ],
-        categories: [
-            "web",
-            "full-stack",
-            "backend",
-            "utility",
-            "mobile",
-            "aws",
-            "enterprise",
+            "cicd",
+            "database",
         ],
         repoUrl: "https://github.com/private-repo",
         liveUrl: "https://www.amazon.com/b2b",
@@ -124,7 +113,7 @@ export const featuredProjects = [
             "react",
             "full-stack",
         ],
-        repoUrl: "https://github.com/Rancor38/imustkill-website",
+        repoUrl: "https://github.com/becomingaria/imustkill-website",
         liveUrl: "https://imustkill.com/",
     },
     {
@@ -132,8 +121,8 @@ export const featuredProjects = [
         description:
             "A do-it-all discord bot with AI, currency conversion, food commands, and humor",
         highlights: ["Used OpenAI's LLMs for intelligent interactions"],
-        categories: ["utility", "backend"],
-        repoUrl: "https://github.com/Rancor38/borgbot/",
+        categories: ["utility", "backend", "database"],
+        repoUrl: "https://github.com/becomingaria/borgbot/",
         liveUrl: null,
     },
     {
@@ -141,7 +130,7 @@ export const featuredProjects = [
         description: "Search tool for D&D 5e monsters using Open5e API",
         highlights: ["Built with React, optimized state management"],
         categories: ["web", "database"],
-        repoUrl: "https://github.com/Rancor38/monster",
+        repoUrl: "https://github.com/becomingaria/monster",
         liveUrl: "https://monsterfinder5e.netlify.app/",
     },
     {
@@ -150,15 +139,15 @@ export const featuredProjects = [
             "Virtual pet game created in one day with interactive gameplay",
         highlights: [],
         categories: ["game", "frontend"],
-        repoUrl: "https://github.com/Rancor38/textmagotchi",
-        liveUrl: "https://rancor38.github.io/textmagotchi/",
+        repoUrl: "https://github.com/becomingaria/textmagotchi",
+        liveUrl: "https://becomingaria.github.io/textmagotchi/",
     },
     {
         title: "RPG-Dice-React",
         description: "React-based dice roller for tabletop games",
         highlights: ["Collaborative project refactored from Django"],
         categories: ["web", "frontend"],
-        repoUrl: "https://github.com/Rancor38/rpg-dice-react/",
+        repoUrl: "https://github.com/becomingaria/rpg-dice-react/",
         liveUrl: "https://rpg-dice-react.netlify.app/",
     },
     {
@@ -166,8 +155,8 @@ export const featuredProjects = [
         description: "To-Do list with task management and export features",
         highlights: ["Built with HTML, CSS, JavaScript"],
         categories: ["web", "frontend", "utility"],
-        repoUrl: "https://github.com/Rancor38/simple-to-do",
-        liveUrl: "https://rancor38.github.io/simple-to-do/",
+        repoUrl: "https://github.com/becomingaria/simple-to-do",
+        liveUrl: "https://becomingaria.github.io/simple-to-do/",
     },
 ]
 

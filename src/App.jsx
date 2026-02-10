@@ -1,6 +1,8 @@
 import './App.css';
 import { useRef, useState, useEffect, lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useWipeNavigate } from './components/WipeTransition';
 
 // Components
 import Loading from './components/Loading';
@@ -13,49 +15,107 @@ const Projects = lazy(() => import('./pages/Projects'));
 const Contact = lazy(() => import('./pages/Contact'));
 
 const App = () => {
-  const [activeSection, setActiveSection] = useState('about');
+  const [activeSection, setActiveSection] = useState('home');
+  const activeSectionRef = useRef('home');
+  const headerRef = useRef(null);
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const wipeNavigate = useWipeNavigate();
 
-  // Track scrolling and update active section
+  // Handle scrolling to section from query parameter
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 200; // Adding offset for better detection
+    const params = new URLSearchParams(location.search);
+    const section = params.get('section');
 
-      // Check which section is currently in view
-      if (aboutRef.current && scrollPosition >= aboutRef.current.offsetTop &&
-        scrollPosition < (skillsRef.current?.offsetTop || Infinity)) {
-        setActiveSection('about');
-      } else if (skillsRef.current && scrollPosition >= skillsRef.current.offsetTop &&
-        scrollPosition < (projectsRef.current?.offsetTop || Infinity)) {
-        setActiveSection('skills');
-      } else if (projectsRef.current && scrollPosition >= projectsRef.current.offsetTop &&
-        scrollPosition < (contactRef.current?.offsetTop || Infinity)) {
-        setActiveSection('projects');
-      } else if (contactRef.current && scrollPosition >= contactRef.current.offsetTop) {
-        setActiveSection('contact');
-      }
+    if (section) {
+      // Small delay to ensure refs are ready
+      setTimeout(() => {
+        const sectionRefs = {
+          home: headerRef,
+          about: aboutRef,
+          skills: skillsRef,
+          projects: projectsRef,
+          contact: contactRef,
+        };
+
+        const targetRef = sectionRefs[section];
+        if (targetRef?.current) {
+          targetRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [location.search]);
+
+  // Track sections with Intersection Observer
+  useEffect(() => {
+    const sections = [
+      { id: 'home', ref: headerRef },
+      { id: 'about', ref: aboutRef },
+      { id: 'skills', ref: skillsRef },
+      { id: 'projects', ref: projectsRef },
+      { id: 'contact', ref: contactRef },
+    ];
+
+    const observerOptions = {
+      root: null, // viewport
+      rootMargin: '-20% 0px -70% 0px', // trigger when section is in top 30% of viewport
+      threshold: 0,
     };
 
-    // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.getAttribute('data-section');
+          if (sectionId && sectionId !== activeSectionRef.current) {
+            activeSectionRef.current = sectionId;
+            setActiveSection(sectionId);
+            // Use clean URL for home, query param for others
+            if (sectionId === 'home') {
+              window.history.replaceState(null, '', '/');
+            } else {
+              window.history.replaceState(null, '', `/?section=${sectionId}`);
+            }
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all sections
+    sections.forEach(({ ref }) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => observer.disconnect();
   }, []);
 
-  // Scroll to section function
-  const scrollToSection = (sectionRef) => {
+  // Scroll to section function and update URL
+  const scrollToSection = (sectionRef, sectionId) => {
     sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    activeSectionRef.current = sectionId;
+    setActiveSection(sectionId);
+    if (sectionId === 'home') {
+      navigate('/', { replace: true });
+    } else {
+      navigate(`/?section=${sectionId}`, { replace: true });
+    }
   };
 
-  // Navigate to resume page
+  // Navigate to resume page with wipe transition
   const navigateToResume = () => {
-    window.location.href = '/resume';
+    wipeNavigate('/resume', 'left');
   };
 
   // Navigation items
   const navItems = [
+    { id: 'home', label: 'Home', ref: headerRef },
     { id: 'about', label: 'About', ref: aboutRef },
     { id: 'skills', label: 'Skills', ref: skillsRef },
     { id: 'projects', label: 'Projects', ref: projectsRef },
@@ -76,7 +136,7 @@ const App = () => {
                 if (item.isResumeDownload) {
                   navigateToResume();
                 } else {
-                  scrollToSection(item.ref);
+                  scrollToSection(item.ref, item.id);
                 }
               }}
             >
@@ -87,7 +147,9 @@ const App = () => {
       </nav>
 
       {/* Consolidated Header Component */}
-      {/* <Header /> */}
+      <div ref={headerRef} data-section="home" className="portfolio header-section">
+        <Header />
+      </div>
 
 
       {/* Main Content */}
@@ -95,6 +157,7 @@ const App = () => {
         {/* About Section */}
         <motion.section
           ref={aboutRef}
+          data-section="about"
           className="section"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -102,13 +165,14 @@ const App = () => {
           transition={{ duration: 0.4 }}
         >
           <Suspense fallback={<Loading />}>
-            <About />
+            <About key={location.key} />
           </Suspense>
         </motion.section>
 
         {/* Skills Section */}
         <motion.section
           ref={skillsRef}
+          data-section="skills"
           className="section"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -123,6 +187,7 @@ const App = () => {
         {/* Projects Section */}
         <motion.section
           ref={projectsRef}
+          data-section="projects"
           className="section"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -137,6 +202,7 @@ const App = () => {
         {/* Contact Section */}
         <motion.section
           ref={contactRef}
+          data-section="contact"
           className="section"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

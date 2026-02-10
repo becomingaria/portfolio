@@ -220,7 +220,6 @@ const Skills = () => {
 
   const other = [
     { name: "LoRaWAN", icon: lorawanImage, url: "https://lora-alliance.org/about-lorawan/" },
-    { name: "DM's Guild", icon: dmsGuildImage, url: "https://www.dmsguild.com/" },
   ];
 
   // Style for rounded images

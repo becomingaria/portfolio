@@ -1,0 +1,227 @@
+/* Cube Transition Styles */
+.cube-transition-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Overlay that covers the screen during transition */
+.cube-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    animation: fadeIn 0.2s ease-out forwards;
+}
+
+.cube-overlay.zoom-in {
+    animation: fadeOut 0.3s ease-out 0.1s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* 3D Scene container */
+.cube-scene {
+    width: 200px;
+    height: 200px;
+    perspective: 800px;
+    perspective-origin: center center;
+}
+
+/* The cube itself */
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    transform: translateZ(-100px) scale(1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Zoom out state */
+.cube.zoomed-out {
+    transform: translateZ(-300px) scale(0.7);
+}
+
+/* Rotated to resume (forward) */
+.cube.rotated-to-resume {
+    transform: translateZ(-300px) scale(0.7) rotateY(-90deg);
+}
+
+/* Rotated to portfolio (back) */
+.cube.rotated-to-portfolio {
+    transform: translateZ(-300px) scale(0.7) rotateY(0deg);
+}
+
+/* Zoom back in */
+.cube.zoomed-in {
+    transform: translateZ(-100px) scale(1);
+}
+
+.cube.zoomed-in.rotated-to-resume {
+    transform: translateZ(-100px) scale(1) rotateY(-90deg);
+}
+
+.cube.zoomed-in.rotated-to-portfolio {
+    transform: translateZ(-100px) scale(1) rotateY(0deg);
+}
+
+/* Cube faces */
+.cube-face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    backface-visibility: visible;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        0 0 40px rgba(74, 144, 217, 0.4),
+        inset 0 0 40px rgba(74, 144, 217, 0.15);
+}
+
+.cube-face-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.cube-face-icon {
+    font-size: 3rem;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.cube-face-label {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(74, 144, 217, 0.8);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Front face - Portfolio */
+.cube-face-front {
+    background: linear-gradient(145deg, #2d2d44 0%, #1a1a2e 100%);
+    transform: rotateY(0deg) translateZ(100px);
+}
+
+/* Right face - Resume */
+.cube-face-right {
+    background: linear-gradient(145deg, #1e3a5f 0%, #0f2744 100%);
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+/* Left face - Portfolio (for back navigation) */
+.cube-face-left {
+    background: linear-gradient(145deg, #2d2d44 0%, #1a1a2e 100%);
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+/* Glow overlay on faces */
+.cube-face::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 14px;
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            rgba(138, 43, 226, 0.25) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 70% 70%,
+            rgba(74, 144, 217, 0.25) 0%,
+            transparent 50%
+        );
+    z-index: 1;
+}
+
+/* Shine effect */
+.cube-face::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.15) 50%,
+        transparent 100%
+    );
+    border-radius: 14px;
+    animation: shine 2s ease-in-out infinite;
+}
+
+@keyframes shine {
+    0%,
+    100% {
+        left: -100%;
+    }
+    50% {
+        left: 100%;
+    }
+}
+
+/* Ambient glow behind cube */
+.cube-overlay::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(
+        circle,
+        rgba(74, 144, 217, 0.2) 0%,
+        transparent 70%
+    );
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 0.9;
+    }
+}

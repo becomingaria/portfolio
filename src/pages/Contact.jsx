@@ -55,15 +55,6 @@ const Contact = () => {
         ))}
       </motion.main>
 
-      <motion.div
-        className="contact-cta"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.3 }}
-        transition={{ delay: 0.5 }}
-      >
-        <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.</p>
-      </motion.div>
     </section>
   );
 };

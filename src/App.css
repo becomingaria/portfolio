@@ -1,14 +1,26 @@
 /* Root CSS Variables for consistent theming */
 :root {
-    --primary-color: #333;
-    --secondary-color: #555;
-    --accent-color: #8a2be2;
-    --text-color: #333;
-    --background-color: #fff;
-    --card-background: #f9f9f9;
+    /* Color palette based on cosmic neon theme */
+    --primary-color: #0d0d1a;
+    --secondary-color: #1a1a2e;
+    --accent-color: #7b2ff7;
+    --accent-cyan: #00d4ff;
+    --accent-magenta: #e040fb;
+    --accent-purple: #9c27b0;
+    --text-color: #f0f0f5;
+    --text-muted: #a0a0b0;
+    --background-color: #0d0d1a;
+    --card-background: rgba(26, 26, 46, 0.8);
+    --gradient-primary: linear-gradient(
+        135deg,
+        #e040fb 0%,
+        #00d4ff 50%,
+        #7b2ff7 100%
+    );
+    --gradient-nav: linear-gradient(180deg, #7b2ff7, #9c27b0);
     --transition-speed: 0.3s;
     --border-radius: 8px;
-    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --box-shadow: 0 4px 20px rgba(123, 47, 247, 0.2);
     --section-spacing: 30px; /* Reduced from 80px to 30px */
 }
 
@@ -30,8 +42,18 @@ body {
 }
 
 body {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: var(--text-color);
@@ -53,7 +75,7 @@ body {
     top: 0;
     right: 20px;
     z-index: 1000;
-    background: linear-gradient(180deg, var(--accent-color), #4a00e0);
+    background: var(--gradient-nav);
     border-radius: 0 0 16px 16px;
     box-shadow: var(--box-shadow);
     transition: all 0.3s ease;
@@ -130,11 +152,10 @@ body {
     font-weight: 700;
     margin: 0;
     line-height: 1.2;
-    background: linear-gradient(135deg, var(--accent-color), #4a00e0);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-fill-color: transparent; /* For future compatibility */
 }
 
 .main-header header p {
@@ -244,8 +265,9 @@ body {
     font-weight: 700;
     margin: 0;
     line-height: 1.2;
-    background: linear-gradient(135deg, var(--accent-color), #4a00e0);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -346,6 +368,8 @@ body {
     margin-bottom: 20px;
     position: relative;
     display: inline-block;
+    width: 100%;
+    color: white;
 }
 
 .skills h2::after {
@@ -362,7 +386,7 @@ body {
     font-size: 1.5rem;
     margin-bottom: 15px;
     margin-top: 30px;
-    color: var(--secondary-color);
+    color: white;
 }
 
 .skills ul {
@@ -376,7 +400,7 @@ body {
 }
 
 .skills a {
-    color: var(--text-color);
+    color: #000;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -385,8 +409,12 @@ body {
     padding: 15px;
     border-radius: var(--border-radius);
     background-color: white;
-    box-shadow: var(--box-shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow:
+        0 4px 20px var(--accent-magenta),
+        0 0 30px rgba(224, 64, 251, 0.4);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .skills img {
@@ -394,6 +422,7 @@ body {
     width: 60px;
     margin-bottom: 10px;
     transition: transform 0.3s ease;
+    filter: grayscale(100%) contrast(1.5);
 }
 
 .skills li {
@@ -402,7 +431,9 @@ body {
 
 .skills a:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow:
+        0 10px 35px var(--accent-magenta),
+        0 0 40px rgba(224, 64, 251, 0.6);
 }
 
 .skills a:hover img {
@@ -411,7 +442,9 @@ body {
 
 .skills a:active {
     transform: translateY(0);
-    box-shadow: var(--box-shadow);
+    box-shadow:
+        0 4px 20px var(--accent-magenta),
+        0 0 30px rgba(224, 64, 251, 0.4);
 }
 
 /* Projects section */
@@ -551,7 +584,9 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     gap: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
     max-width: 100%;
     min-width: 0;
     min-height: min-content;
@@ -594,11 +629,13 @@ body {
     font-size: 0.9rem;
     font-weight: 600;
     padding: 8px 16px;
-    background: linear-gradient(135deg, var(--accent-color), #4a00e0);
+    background: var(--gradient-nav);
     color: white;
     text-decoration: none;
     border-radius: 20px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     width: 100%; /* Make button full width */
     max-width: 200px; /* But limit maximum width */
     align-self: center;
@@ -647,12 +684,18 @@ body {
     margin-left: 15px;
     height: 34px;
     width: 34px;
-    transition: transform 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
     border-radius: 50%;
+    filter: invert(27%) sepia(78%) saturate(5000%) hue-rotate(252deg)
+        brightness(100%);
 }
 
 .contact li img:hover {
     transform: scale(1.2);
+    filter: invert(35%) sepia(90%) saturate(5500%) hue-rotate(252deg)
+        brightness(110%);
 }
 
 .contact button {
@@ -686,7 +729,7 @@ body {
     align-items: center;
     width: 80px;
     height: auto;
-    background: linear-gradient(180deg, var(--accent-color), #4a00e0);
+    background: var(--gradient-nav);
     border-radius: 0 16px 16px 0;
     box-shadow: var(--box-shadow);
     transition: all 0.3s ease;
@@ -951,17 +994,10 @@ body {
     }
 }
 
-/* Dark mode support */
+/* Dark mode support - base theme is already dark */
 @media (prefers-color-scheme: dark) {
-    :root {
-        --text-color: #f0f0f0;
-        --background-color: #121212;
-        --card-background: #1e1e1e;
-        --secondary-color: #b0b0b0;
-    }
-
     .skills a {
-        background-color: #2d2d2d;
+        background-color: var(--secondary-color);
     }
 
     .skills img {

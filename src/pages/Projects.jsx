@@ -9,59 +9,47 @@ const Projects = () => {
 
     // Project data is used in the Resume component through projectsData.js
     const projects = [
-        // Enterprise AWS Projects - Most Impressive
+        // Top Priority Projects
+        {
+            name: "Aqueduct",
+            description: "Milvian Group's flagship IoT platform providing water intelligence, energy management, indoor air quality monitoring, asset intelligence, unified dashboards, and automated alerts. Hardware-agnostic with 20+ sensor partners supporting LoRaWAN, BACnet, and Modbus protocols.",
+            url: "https://milviangroup.com/aqueduct-platform",
+            categories: ["web", "frontend", "full-stack", "iot", "enterprise", "cicd"]
+        },
+        {
+            name: "Atria - The Hardware App",
+            description: "An extensible application used at all levels of the Milvian Hardware Team's install, monitoring, and provisioning processes for Aqueduct and the LoRaWAN Platform. The singular platform for hardware installers, device provisioners, site surveyors, and site administrators to monitor hardware status and perform provisioning, installations, and remediation.",
+            url: "https://www.atria.milvian-amzl.com/",
+            categories: ["web", "full-stack", "backend", "utility", "aws", "iot", "enterprise", "hardware", "cicd", "mobile"]
+        },
+
+        // Enterprise AWS Projects
         {
             name: "LoRaWAN Platform CI/CD Pipeline",
             description: "Architected and implemented a multi-account AWS CDK infrastructure-as-code solution for Amazon's LoRaWAN IoT platform, establishing automated CI/CD pipelines with approval gates that seamlessly deploy across development and production environments.",
             url: "https://www.amazon.com/b2b",
-            categories: ["backend", "aws", "iot", "cdk", "enterprise", "cicd", "cloud"]
+            categories: ["backend", "aws", "iot", "cdk", "enterprise", "cicd", "cloud", "database"]
         },
         {
             name: "BMS Monitoring Suite for Amazon OpsTech",
             description: "Led development of comprehensive Building Management System (BMS) monitoring measures for all Corp connected OpsTech support buildings at Amazon, creating enterprise solutions that monitor facility infrastructure, improve operational efficiency, and enable proactive maintenance across the global building network.",
             url: "https://www.amazon.com/b2b",
-            categories: ["backend", "utility", "aws", "iot", "data", "cdk", "enterprise"]
-        },
-        {
-            name: "Hardware Installation App",
-            description: "A mobile-optimized web application deployed on AWS for field technicians to document and track hardware installations with photo evidence, featuring offline support, image processing, and robust cloud storage using AWS serverless architecture.",
-            url: "https://www.amazon.com/b2b",
-            categories: ["web", "full-stack", "backend", "utility", "mobile", "aws", "enterprise"]
-        },
-        {
-            name: "Device Health App",
-            description: "A web application deployed on AWS for monitoring and managing IoT devices, featuring real-time health status tracking for LoRaWAN sensors and gateways. Built with React, Python Lambda, and AWS CDK.",
-            url: "https://www.amazon.com/b2b",
-            categories: ["web", "full-stack", "backend", "utility", "aws", "iot", "enterprise"]
+            categories: ["backend", "utility", "aws", "iot", "data", "cdk", "enterprise", "cicd", "database"]
         },
         {
             name: "Wirefree Gateway Health Dashboard",
             description: "AWS CDK solution that monitors LoRaWAN gateway connectivity for Amazon's Corp connected OpsTech support facilities, providing real-time visibility into building management systems across the global infrastructure and enabling timely issue detection through automated health snapshots and visual analytics.",
             url: "https://www.amazon.com/b2b",
-            categories: ["backend", "utility", "aws", "iot", "data", "cdk", "enterprise"]
+            categories: ["backend", "utility", "aws", "iot", "data", "cdk", "enterprise", "cicd", "database"]
         },
         {
             name: "LoRaWAN Device Health Dashboard",
             description: "Enterprise AWS solution for monitoring IoT sensor networks throughout Amazon's global OpsTech support buildings, creating automated snapshots of building management system health metrics and enabling facilities teams to maintain optimal operational conditions through comprehensive visual dashboards.",
             url: "https://www.amazon.com/b2b",
-            categories: ["backend", "utility", "aws", "iot", "data", "enterprise"]
+            categories: ["backend", "utility", "aws", "iot", "data", "enterprise", "database"]
         },
 
-        // Professional Web Applications - Highly Impressive
-        {
-            name: "Aqueduct",
-            description: "A complex web-based tool for data flow management and visualization.",
-            url: "https://milvian.group/aqueduct/",
-            categories: ["web", "frontend", "full-stack"]
-        },
-
-        // Notable Personal Projects - Moderately Impressive
-        {
-            name: "EZ-Notes",
-            description: "An application for saving rich text notes online.",
-            url: "https://ez-notes.netlify.app/",
-            categories: ["web", "full-stack"]
-        },
+        // Notable Personal Projects
         {
             name: "Monster Finder",
             description: "An application for finding monsters to use in your Dungeons & Dragons 5th Edition roleplaying game.",
@@ -71,21 +59,15 @@ const Projects = () => {
         {
             name: "Borgbot",
             description: "A do-it-all discord bot that is far too powerful for how silly it is.",
-            url: "https://github.com/Rancor38/borgbot/",
-            categories: ["utility", "backend"]
+            url: "https://github.com/becomingaria/borgbot/",
+            categories: ["utility", "backend", "database"]
         },
 
-        // Smaller Fun Projects - Interesting but Less Complex
-        {
-            name: "DM's Guild Titles",
-            description: "A series of booklets published on DM's Guild. (Unavailable on Mobile devices, instead search 'Zakariah')",
-            url: "https://www.dmsguild.com/browse.php?author=Zakariah",
-            categories: ["writing"]
-        },
+        // Smaller Fun Projects
         {
             name: "Textmagotchi",
             description: "A Tamagotchi-like game for your browser!",
-            url: "https://rancor38.github.io/textmagotchi/",
+            url: "https://becomingaria.github.io/textmagotchi/",
             categories: ["game", "frontend"]
         },
         {
@@ -97,13 +79,13 @@ const Projects = () => {
         {
             name: "Simple-To-Do",
             description: "A simple rapidly fast to-do application that works without a database.",
-            url: "https://rancor38.github.io/simple-to-do/",
+            url: "https://becomingaria.github.io/simple-to-do/",
             categories: ["web", "frontend", "utility"]
         },
     ];
 
     // Filter categories
-    const categories = ["all", "web", "frontend", "backend", "full-stack", "game", "writing", "utility", "database", "mobile", "aws", "iot", "data", "cdk", "enterprise", "cicd", "cloud"];
+    const categories = ["all", "web", "frontend", "backend", "full-stack", "game", "utility", "database", "mobile", "aws", "iot", "data", "cdk", "enterprise", "cicd", "cloud", "hardware"];
 
     // Filtered projects
     const filteredProjects = filter === 'all'

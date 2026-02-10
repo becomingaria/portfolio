@@ -3,16 +3,16 @@
 
 // Base resume data
 const resumeData = {
-    name: "Zakariah J Hallow",
-    title: "Software Engineer",
+    name: "Aria J Hallow",
+    title: "Software Manager",
     contact: {
         phone: "424-666-0598",
-        email: "zak.text@gmail.com",
+        email: "becomingaria@gmail.com",
         linkedin: "https://linkedin.com/in/zakariah-om",
-        github: "https://github.com/rancor38",
-        portfolio: "https://zakariah.xyz/",
+        github: "https://github.com/becomingaria",
+        portfolio: "https://ariahallow.dev/",
     },
-    summary: `As a versatile and dedicated professional, I bring expertise in web development, team-building, and communication. As a full stack engineer, I thrive on implementing innovative systems, and staying at the forefront of industry trends. With a track record of unlocking hidden potential, creating genuine connections, and delivering results, I am excited to contribute my expertise as a valued team member.`,
+    summary: `As a versatile and dedicated professional, I bring expertise in software development, team leadership, and strategic delivery. As a Software Manager, I thrive on building high-performing teams, driving platform initiatives, and delivering measurable results to executive leadership. With a track record of unlocking hidden potential, creating genuine connections, and exceeding KPIs, I am excited to contribute my expertise as a technology leader.`,
     education: [
         { name: "AWS Solutions Architect Assoc.", year: 2024 },
         { name: "AWS Cloud Practitioner", year: 2023 },
@@ -21,14 +21,15 @@ const resumeData = {
     ],
     expertise: {
         professional: [
-            "Adaptability",
-            "Collaboration",
-            "People Skills",
-            "Problem Solving",
-            "Time Management",
+            "Team Leadership",
+            "Direct Report Management",
+            "Strategic Planning",
+            "KPI Delivery",
+            "Cross-functional Collaboration",
         ],
         technical: [
-            "Data Collection & Analysis",
+            "Amazon Web Services (AWS)",
+            "ection & Analysis",
             "Microsoft 365",
             "Google Workspace",
             "Slack",
@@ -67,15 +68,15 @@ const resumeData = {
     },
     professionalExperience: [
         {
-            title: "Software Engineer",
+            title: "Software Manager",
             company: "Milvian Group",
             location: "Los Angeles, CA",
             years: "2024 – Present",
             achievements: [
-                "Served as a solutions architect and adviser to peers.",
-                "Worked on the LoRaWAN Platform CI/CD Pipeline and BMS Monitoring Suite for Amazon OpsTech.",
-                "Contributed to the Wirefree, Hardware, and Device Health Apps.",
-                "Architected Aqueduct, the company's flagship product.",
+                "Manage direct reports and lead cross-functional engineering teams.",
+                "Head the Controls Division of Aqueduct, the company's flagship IoT platform.",
+                "Oversee development of the Atria and LoRaWAN Platform initiatives.",
+                "Deliver KPIs and strategic updates to Vice Presidents and CEO.",
             ],
         },
         {
@@ -116,7 +117,7 @@ const resumeData = {
         {
             name: "Borgbot",
             type: "Solo",
-            github: "https://github.com/Rancor38/borgbot/",
+            github: "https://github.com/becomingaria/borgbot/",
             description: [
                 "Discord bot with AI, currency conversion, food commands, and humor.",
                 "Used OpenAI's LLMs for intelligent interactions.",
@@ -125,8 +126,8 @@ const resumeData = {
         {
             name: "1-Day Textmagotchi",
             type: "Solo",
-            github: "https://github.com/Rancor38/textmagotchi",
-            live: "https://rancor38.github.io/textmagotchi/",
+            github: "https://github.com/becomingaria/textmagotchi",
+            live: "https://becomingaria.github.io/textmagotchi/",
             description: [
                 "Virtual pet game created in one day with interactive gameplay.",
             ],
@@ -134,7 +135,7 @@ const resumeData = {
         {
             name: "RPG Dice-React",
             type: "Group",
-            github: "https://github.com/Rancor38/rpg-dice-react/",
+            github: "https://github.com/becomingaria/rpg-dice-react/",
             live: "https://rpg-dice-react.netlify.app/",
             description: [
                 "React-based dice roller for tabletop games.",
@@ -144,8 +145,8 @@ const resumeData = {
         {
             name: "Simple-To-Do",
             type: "Solo",
-            github: "https://github.com/Rancor38/simple-to-do",
-            live: "https://rancor38.github.io/simple-to-do/",
+            github: "https://github.com/becomingaria/simple-to-do",
+            live: "https://becomingaria.github.io/simple-to-do/",
             description: [
                 "To-Do list with task management and export features.",
                 "Built with HTML, CSS, JavaScript.",
@@ -165,16 +166,16 @@ const resumeData = {
 // Function to dynamically merge in project data when Projects component exists
 const updateProjectsFromPortfolio = (resumeData) => {
     try {
-        // Using hardcoded project data - now including Hardware Installation App
+        // Using hardcoded project data
         const featuredProjects = [
             {
                 title: "Aqueduct",
                 description:
-                    "Architected and led development of Milvian Group's flagship web application for complex data flow management and visualization",
+                    "Milvian Group's flagship IoT platform providing water intelligence, energy management, indoor air quality monitoring, asset intelligence, unified dashboards, and automated alerts",
                 highlights: [
-                    "Designed system architecture and data models",
-                    "Led cross-functional development team",
-                    "Implemented advanced data visualization features",
+                    "Hardware-agnostic with 20+ vetted sensor partners supporting LoRaWAN, BACnet, and Modbus",
+                    "Energy management with circuit-level electricity monitoring and demand analysis",
+                    "Indoor air quality monitoring with CO2, VOC, PM2.5 tracking",
                 ],
                 categories: [
                     "web",
@@ -182,9 +183,31 @@ const updateProjectsFromPortfolio = (resumeData) => {
                     "frontend",
                     "enterprise",
                     "architecture",
+                    "iot",
                 ],
                 repoUrl: "https://github.com/private-repo",
-                liveUrl: "https://milvian.group/aqueduct/",
+                liveUrl: "https://milviangroup.com/aqueduct-platform",
+            },
+            {
+                title: "Atria - The Hardware App",
+                description:
+                    "Extensible application for Milvian Hardware Team's install, monitoring, and provisioning processes for Aqueduct and the LoRaWAN Platform",
+                highlights: [
+                    "Singular platform for hardware installers, device provisioners, and site administrators",
+                    "Monitor hardware status and perform provisioning, installations, and remediation",
+                    "Migrated and expanded Install App and Device Health App functionality",
+                ],
+                categories: [
+                    "web",
+                    "full-stack",
+                    "enterprise",
+                    "architecture",
+                    "hardware",
+                    "iot",
+                    "platform",
+                ],
+                repoUrl: "https://github.com/private-repo",
+                liveUrl: "https://www.atria.milvian-amzl.com/",
             },
             {
                 title: "LoRaWAN Platform CI/CD Pipeline",
@@ -228,33 +251,12 @@ const updateProjectsFromPortfolio = (resumeData) => {
                 liveUrl: "https://www.amazon.com/b2b",
             },
             {
-                title: "Hardware Installation App",
-                description:
-                    "A mobile-optimized web application deployed on AWS for field technicians",
-                highlights: [
-                    "Created app for documenting hardware installations with photo evidence",
-                    "Implemented offline support and robust cloud storage",
-                    "Built with AWS serverless architecture",
-                ],
-                categories: [
-                    "web",
-                    "full-stack",
-                    "backend",
-                    "utility",
-                    "mobile",
-                    "aws",
-                    "enterprise",
-                ],
-                repoUrl: "https://github.com/private-repo",
-                liveUrl: "https://www.amazon.com/b2b",
-            },
-            {
                 title: "Borgbot",
                 description:
                     "A do-it-all discord bot with AI, currency conversion, food commands, and humor",
                 highlights: ["Used OpenAI's LLMs for intelligent interactions"],
                 categories: ["utility", "backend"],
-                repoUrl: "https://github.com/Rancor38/borgbot/",
+                repoUrl: "https://github.com/becomingaria/borgbot/",
                 liveUrl: null,
             },
             {
@@ -262,7 +264,7 @@ const updateProjectsFromPortfolio = (resumeData) => {
                 description: "Search tool for D&D 5e monsters using Open5e API",
                 highlights: ["Built with React, optimized state management"],
                 categories: ["web", "database"],
-                repoUrl: "https://github.com/Rancor38/monster",
+                repoUrl: "https://github.com/becomingaria/monster",
                 liveUrl: "https://monsterfinder5e.netlify.app/",
             },
         ]
@@ -270,7 +272,7 @@ const updateProjectsFromPortfolio = (resumeData) => {
         if (featuredProjects) {
             // Remove Monster Finder from dynamic projects
             const filteredProjects = featuredProjects.filter(
-                (project) => project.title !== "Monster Finder"
+                (project) => project.title !== "Monster Finder",
             )
             // Take the top 6 projects (excluding Monster Finder)
             const topProjects = filteredProjects.slice(0, 6).map((project) => ({
@@ -281,7 +283,7 @@ const updateProjectsFromPortfolio = (resumeData) => {
                 github: project.repoUrl,
                 live: project.liveUrl,
                 description: [project.description].concat(
-                    project.highlights || []
+                    project.highlights || [],
                 ),
             }))
 
@@ -293,7 +295,7 @@ const updateProjectsFromPortfolio = (resumeData) => {
     } catch (error) {
         console.warn(
             "Couldn't import projects data, using static data instead:",
-            error
+            error,
         )
         return resumeData
     }
@@ -354,7 +356,7 @@ const updateSkillsFromPortfolio = (resumeData) => {
     } catch (error) {
         console.warn(
             "Couldn't import skills data, using static data instead:",
-            error
+            error,
         )
         return resumeData
     }
@@ -367,12 +369,12 @@ const updateContactFromPortfolio = (resumeData) => {
         const contactItems = [
             {
                 label: "Name",
-                content: "Zakariah J Hallow",
+                content: "Aria J Hallow",
                 icon: null,
             },
             {
                 label: "Email",
-                content: "zakariahjhallow@outlook.com",
+                content: "becomingaria@gmail.com",
                 icon: null,
             },
             {
@@ -383,8 +385,8 @@ const updateContactFromPortfolio = (resumeData) => {
             },
             {
                 label: "GitHub",
-                url: "https://github.com/Rancor38",
-                content: "github.com/Rancor38",
+                url: "https://github.com/becomingaria",
+                content: "github.com/becomingaria",
                 icon: "/socials/iconmonstr-github-1-240.png",
             },
         ]
@@ -400,7 +402,7 @@ const updateContactFromPortfolio = (resumeData) => {
 
         // Get other contact info from contactItems
         const linkedinItem = contactItems.find(
-            (item) => item.label === "LinkedIn"
+            (item) => item.label === "LinkedIn",
         )
         if (linkedinItem && linkedinItem.url) {
             resumeData.contact.linkedin = linkedinItem.url
@@ -415,7 +417,7 @@ const updateContactFromPortfolio = (resumeData) => {
     } catch (error) {
         console.warn(
             "Couldn't import contact data, using static data instead:",
-            error
+            error,
         )
         return resumeData
     }
@@ -423,7 +425,7 @@ const updateContactFromPortfolio = (resumeData) => {
 
 // Combine all data for the most up-to-date resume
 const dynamicResumeData = updateContactFromPortfolio(
-    updateSkillsFromPortfolio(updateProjectsFromPortfolio(resumeData))
+    updateSkillsFromPortfolio(updateProjectsFromPortfolio(resumeData)),
 )
 
 export default dynamicResumeData

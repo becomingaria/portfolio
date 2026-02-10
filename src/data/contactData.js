@@ -2,12 +2,12 @@
 export const contactItems = [
     {
         label: "Name",
-        content: "Zakariah J Hallow",
+        content: "Aria J Hallow",
         icon: null,
     },
     {
         label: "Email",
-        content: "zakariahjhallow@outlook.com",
+        content: "becomingaria@gmail.com",
         icon: null,
     },
     {
@@ -18,15 +18,9 @@ export const contactItems = [
     },
     {
         label: "GitHub",
-        url: "https://github.com/Rancor38",
-        content: "github.com/Rancor38",
+        url: "https://github.com/becomingaria",
+        content: "github.com/becomingaria",
         icon: "/socials/iconmonstr-github-1-240.png",
-    },
-    {
-        label: "Discord",
-        url: "https://discordapp.com/users/Rancor38/",
-        content: "discordapp.com/users/Rancor38",
-        icon: null,
     },
 ]
 
