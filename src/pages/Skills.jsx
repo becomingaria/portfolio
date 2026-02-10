@@ -80,7 +80,6 @@ import codeCommitImage from '../images/codecommit.png';
 import codeDeployImage from '../images/codedeploy.png';
 import codePipelineImage from '../images/codepipeline.png';
 import gaGraduateImage from '../images/ga-graduate.png';
-import dmsGuildImage from '../images/dms-guild.png';
 import lorawanImage from '../images/lorawan.png';
 import stepFunctionsImage from '../images/step-functions.png';
 import quicksightImage from '../images/quicksight.png';
