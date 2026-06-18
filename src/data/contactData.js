@@ -12,8 +12,8 @@ export const contactItems = [
     },
     {
         label: "LinkedIn",
-        url: "https://www.linkedin.com/in/zakariah-om",
-        content: "linkedin.com/in/zakariah-om",
+        url: "https://www.linkedin.com/in/becoming-aria",
+        content: "linkedin.com/in/becoming-aria",
         icon: "/socials/iconmonstr-linkedin-3-240.png",
     },
     {

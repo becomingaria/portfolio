@@ -182,7 +182,7 @@ const Resume = () => {
               </div>
               <div style={{ display: 'flex', alignItems: 'center', fontSize: '10.5pt', marginBottom: '0.2em', wordBreak: 'break-all' }}>
                 <img src={require('../images/LinkedIn.png')} alt="LinkedIn" style={{ width: '1.7em', height: '1.7em', marginRight: '0.7em', filter: 'drop-shadow(0 0 1px #2222)' }} />
-                in/zakariah-om/
+                in/becoming-aria/
               </div>
               <div style={{ display: 'flex', alignItems: 'center', fontSize: '10.5pt', marginBottom: '0.2em', wordBreak: 'break-all' }}>
                 <img src={require('../images/portfolio.png')} alt="Portfolio" style={{ width: '1.7em', height: '1.7em', marginRight: '0.7em', filter: 'drop-shadow(0 0 1px #2222)' }} />

@@ -8,7 +8,7 @@ const resumeData = {
     contact: {
         phone: "424-666-0598",
         email: "becomingaria@gmail.com",
-        linkedin: "https://linkedin.com/in/zakariah-om",
+        linkedin: "https://linkedin.com/in/becoming-aria",
         github: "https://github.com/becomingaria",
         portfolio: "https://ariahallow.dev/",
     },
@@ -379,8 +379,8 @@ const updateContactFromPortfolio = (resumeData) => {
             },
             {
                 label: "LinkedIn",
-                url: "https://www.linkedin.com/in/zakariah-om",
-                content: "linkedin.com/in/zakariah-om",
+                url: "https://www.linkedin.com/in/becoming-aria",
+                content: "linkedin.com/in/becoming-aria",
                 icon: "/socials/iconmonstr-linkedin-3-240.png",
             },
             {
