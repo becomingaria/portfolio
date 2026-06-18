@@ -17,7 +17,7 @@ Hello, welcome to my website! This site is a showcase of a few of the things tha
 
 ### Links
 
-- **LinkedIn:** [linkedin.com/in/zakariah-om](https://www.linkedin.com/in/zakariah-om/)
+- **LinkedIn:** [linkedin.com/in/becoming-aria](https://www.linkedin.com/in/becoming-aria/)
 - **GitHub:** [github.com/becomingaria](https://github.com/becomingaria)
 
 ## Tech Stack
